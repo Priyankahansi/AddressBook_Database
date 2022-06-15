@@ -22,8 +22,8 @@ public class AddressBookSql {
             con = DriverManager.getConnection(jdbcURL, username, password);
             System.out.println("connection done successful!!" + con);
             Statement statement=con.createStatement();
-            statement.executeUpdate("alter table addressBook add column Type varchar(70)");
-            ResultSet resultSet =statement.executeQuery("select *from addressBook");
+         //  statement.executeUpdate("select firstname,city from addressBook order by firstname ASC");
+            ResultSet resultSet =statement.executeQuery("select * from addressBook order by firstname ASC" );
             while(resultSet.next()){
                 System.out.println("firstname:"+resultSet.getString("firstname"));
                 System.out.println("lastname:"+resultSet.getString("lastname"));
